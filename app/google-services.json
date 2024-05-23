@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "66373862260",
+    "project_id": "my-awesone-project-mad-db-2",
+    "storage_bucket": "my-awesone-project-mad-db-2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:66373862260:android:1eec36732a2e655ef8a221",
+        "android_client_info": {
+          "package_name": "com.nikoli.project2mad"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfnFlBMviDZ6lR4AqmxDOHkiRtmFaeC5E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
