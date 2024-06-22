@@ -8,11 +8,15 @@ import android.util.Log
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.EditText
+import android.widget.RadioButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 import com.nikoli.project2mad.R
+import com.nikoli.project2mad.db.UserData
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -147,11 +151,14 @@ class RegisterActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
     private fun register() {
         val email: String = emailEDTV?.text.toString().trim() { it <= ' ' }
         val password: String = passwordEDTV?.text.toString().trim() { it <= ' ' }
+        val name : String = nameEDTV?.text.toString().trim() { it <= ' ' }
+        val sex: String = if (findViewById<RadioButton>(R.id.maleCheck).isChecked) "male" else if (findViewById<RadioButton>(R.id.femaleCheck).isChecked) "female" else "other"
 
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Log.d(ContentValues.TAG, "create user with email: success")
+                    createDataBaseForUser(email,name,sex)
                     registrationSuccessful()
                 } else {
                     Log.w(ContentValues.TAG, "create user with email: failure", task.exception)
@@ -220,4 +227,41 @@ class RegisterActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         val sdf = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
         return sdf.format(date)
     }
+
+    /**
+     * Calculates the age of the user based on the selected date of birth.
+     *
+     * @param birthDate The birth date of the user.
+     * @return The age in years.
+     */
+    private fun calculateAge(birthDate: java.sql.Date): Int {
+        val birthCalendar = Calendar.getInstance()
+        birthCalendar.time = birthDate
+
+        val today = Calendar.getInstance()
+
+        var age = today.get(Calendar.YEAR) - birthCalendar.get(Calendar.YEAR)
+
+        if (today.get(Calendar.DAY_OF_YEAR) < birthCalendar.get(Calendar.DAY_OF_YEAR)) {
+            age--
+        }
+
+        return age
+    }
+
+    private fun createDataBaseForUser(email: String,name:String, sex: String) {
+        val userData= UserData(name, sex, calculateAge(selectedDate!!))
+        FirebaseFirestore.getInstance().collection("users")
+            .document(email)
+            .set(userData, SetOptions.merge())
+            .addOnSuccessListener {
+            }
+            .addOnFailureListener {
+
+            }
+    }
+
+
+
+
 }

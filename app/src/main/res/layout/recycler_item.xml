@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:layout_margin="4dp"
+    android:id="@+id/item_container">
+
+    <TextView
+        android:id="@+id/gameName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Game Name"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/gameTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Game Time"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/gameAccuracy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Game Accuracy"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/gameDatePlayed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date Played"
+        android:textStyle="italic"
+        android:textSize="14sp" />
+</LinearLayout>

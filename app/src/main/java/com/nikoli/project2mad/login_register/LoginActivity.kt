@@ -36,6 +36,7 @@ class LoginActivity : AppCompatActivity() {
         passwordEDTV= findViewById(R.id.passwordEDTVL)
         loginBTN= findViewById(R.id.loginBTNL)
         registerTV= findViewById(R.id.registerTVL)
+        cheat= findViewById(R.id.cheat)
 
 
 
@@ -49,25 +50,24 @@ class LoginActivity : AppCompatActivity() {
         loginBTN?.setOnClickListener {
             if(validLogin()){
                 login()
-                Toast.makeText(this, "Valid login: true", Toast.LENGTH_SHORT).show()
-                goToMail()
+                goToMain()
             }
         }
 
         // Simulate login with predefined credentials when logo is clicked
-//        cheat?.setOnClickListener {
-//            mAuth.signInWithEmailAndPassword("fire@base.com", "!Qwerty123")
-//                .addOnCompleteListener { task ->
-//                    if (task.isSuccessful) {
-//                        Toast.makeText(this@LoginActivity,"You logged in successfully!", Toast.LENGTH_SHORT).show()
-//                        Log.d(ContentValues.TAG, "login with email: success")
-//                        goToMail()
-//                    } else {
-//                        Toast.makeText(this@LoginActivity,"Login failed! :${task.exception}", Toast.LENGTH_SHORT).show()
-//                        Log.w(ContentValues.TAG, "login with email: failure", task.exception)
-//                    }
-//                }
-//        }
+        cheat?.setOnClickListener {
+            mAuth.signInWithEmailAndPassword("oliwia@oliwia.com", "!Qwerty123")
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(this@LoginActivity,"You logged in successfully!", Toast.LENGTH_SHORT).show()
+                        Log.d(ContentValues.TAG, "login with email: success")
+                        goToMain()
+                    } else {
+                        Toast.makeText(this@LoginActivity,"Login failed! :${task.exception}", Toast.LENGTH_SHORT).show()
+                        Log.w(ContentValues.TAG, "login with email: failure", task.exception)
+                    }
+                }
+        }
 
 
     }
@@ -119,7 +119,7 @@ class LoginActivity : AppCompatActivity() {
     /**
      * Navigates to the main activity after successful login.
      */
-    private fun goToMail(){
+    private fun goToMain(){
         val intent = Intent(this@LoginActivity, MainActivity::class.java)
         startActivity(intent)
         finish()

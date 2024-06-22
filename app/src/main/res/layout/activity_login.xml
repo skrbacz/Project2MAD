@@ -8,19 +8,6 @@
     tools:context=".login_register.LoginActivity"
     android:background="@color/white">
 
-<!--    <ImageView-->
-<!--        android:id="@+id/logoIV"-->
-<!--        android:layout_width="286dp"-->
-<!--        android:layout_height="229dp"-->
-<!--        android:layout_marginTop="67dp"-->
-<!--        android:clickable="true"-->
-<!--        android:focusable="true"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.496"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:srcCompat="@drawable/logo" />-->
-
     <EditText
         android:id="@+id/passwordEDTVL"
         android:layout_width="208dp"
@@ -65,6 +52,7 @@
         android:text="Log in"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
+        android:backgroundTint="@color/main_pink"
         app:layout_constraintBottom_toTopOf="@+id/registerTVL"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -83,5 +71,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/cheat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="189dp"
+        android:layout_marginTop="113dp"
+        android:layout_marginEnd="190dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:clickable="true"
+        android:focusable="true"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

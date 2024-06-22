@@ -1,16 +1,25 @@
 package com.nikoli.project2mad
 
 import android.content.Intent
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.nikoli.project2mad.games.moca.MoCA
-import com.nikoli.project2mad.games.ravlt.RAVLT
+import com.nikoli.project2mad.games.number_size_congruency_test.NumberSizeCongruency
 import com.nikoli.project2mad.games.tmt.TMT
 
+/**
+ * Main activity
+ *
+ * @constructor Create empty Main activity
+ */
 class MainActivity : AppCompatActivity() {
 
     private var gameOneBtn: Button?= null
@@ -20,6 +29,26 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val bottomNavigationView = findViewById<LinearLayout>(R.id.bottom_navigation)
+
+        val buttonHistory = bottomNavigationView.findViewById<ImageView>(R.id.button_history)
+        val buttonProfile= bottomNavigationView.findViewById<ImageView>(R.id.button_profile)
+        val buttonHome = bottomNavigationView.findViewById<ImageView>(R.id.button_home)
+        val clicked = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.main_pink_clicked))
+
+        buttonHome.imageTintList = clicked
+
+        buttonHistory.setOnClickListener {
+            val intent= Intent(this, HistoryActivity::class.java)
+            startActivity(intent)
+        }
+
+        buttonProfile.setOnClickListener {
+            val intent= Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
+
 
         gameOneBtn= findViewById(R.id.gameOneBTN)
         gameTwoBtn= findViewById(R.id.gameTwoBTN)
@@ -36,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         gameThreeBtn?.setOnClickListener {
-            val intent= Intent(this, RAVLT::class.java)
+            val intent= Intent(this, NumberSizeCongruency::class.java)
             startActivity(intent)
         }
 

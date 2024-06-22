@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name= "main_pink">#FF99C8</color>
+    <color name= "main_pink_clicked">#FF7CB9</color>
+    <color name= "main_yellow">#FCF6BD</color>
+    <color name= "main_green">#D0F4DE</color>
+    <color name= "main_blue">#A9DEF9</color>
+    <color name= "main_violet">#E4C1F9</color>
 </resources>

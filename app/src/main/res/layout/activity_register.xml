@@ -8,30 +8,27 @@
     android:background="@color/white"
     tools:context=".login_register.RegisterActivity">
 
+
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="50dp"
         android:text="To create an account, fill out personal information:"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="340dp"
-        android:layout_height="477dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <EditText
@@ -64,7 +61,7 @@
 
         <TextView
             android:id="@+id/dobTV"
-            android:layout_width="240dp"
+            android:layout_width="241dp"
             android:layout_height="35dp"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
@@ -72,6 +69,37 @@
             android:text="Date of birth"
             android:textColor="@color/black"
             android:textSize="16sp" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Please choose your sex" />
+
+            <RadioButton
+                android:id="@+id/femaleCheck"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Female" />
+
+            <RadioButton
+                android:id="@+id/maleCheck"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Male" />
+
+            <RadioButton
+                android:id="@+id/otherCheck"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Other/Prefer not to tell" />
+        </RadioGroup>
 
         <EditText
             android:id="@+id/passwordEDTV"
