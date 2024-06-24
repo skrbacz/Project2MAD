@@ -6,13 +6,10 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.nikoli.project2mad.games.moca.MoCA
 import com.nikoli.project2mad.games.number_size_congruency_test.NumberSizeCongruency
+import com.nikoli.project2mad.games.stroop.StroopTest
 import com.nikoli.project2mad.games.tmt.TMT
 
 /**
@@ -55,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         gameThreeBtn= findViewById(R.id.gameThreeBTN)
 
         gameOneBtn?.setOnClickListener{
-            val intent= Intent(this, MoCA::class.java)
+            val intent= Intent(this, StroopTest::class.java)
             startActivity(intent)
         }
 

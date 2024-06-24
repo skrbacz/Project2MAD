@@ -45,7 +45,7 @@ class GameAdapter(private var gameList: List<GameItem>) : RecyclerView.Adapter<G
         holder.gameDatePlayed.text = game.datePlayed
 
         val colorRes = when (game.name) {
-            "New Game" -> R.color.main_violet
+            "Stroop Test" -> R.color.main_violet
             "Trail Making Test" -> R.color.main_green
             "Number Size Congruency" -> R.color.main_blue
             else -> android.R.color.white

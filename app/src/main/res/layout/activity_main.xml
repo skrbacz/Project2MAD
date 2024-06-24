@@ -27,7 +27,7 @@
             android:layout_marginBottom="10dp"
             android:backgroundTint="@color/main_violet"
             android:drawableLeft="@drawable/ic_moon"
-            android:text="new game name"
+            android:text="Stroop Test"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
