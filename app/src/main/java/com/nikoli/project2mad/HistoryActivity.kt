@@ -46,7 +46,7 @@ class HistoryActivity : AppCompatActivity() {
         val clicked = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.main_pink_clicked))
 
         runBlocking {
-            allGamesList= (fetchNumberSizeCongruency() + fetchStroopTest()).toMutableList()
+            allGamesList= (fetchNumberSizeCongruency() + fetchStroopTest()+ fetchEriksensFlanker()).toMutableList()
         }
 
         buttonHistory.imageTintList = clicked
@@ -80,7 +80,7 @@ class HistoryActivity : AppCompatActivity() {
     private fun updateRecyclerView() {
         val filteredList = allGamesList.filter { game ->
             (checkBoxGame1.isChecked && game.name == "Stroop Test") ||
-                    (checkBoxGame2.isChecked && game.name == "Trail Making Test") ||
+                    (checkBoxGame2.isChecked && game.name == "Eriksen's Flanker Test") ||
                     (checkBoxGame3.isChecked && game.name == "Number Size Congruency") ||
                     (!checkBoxGame1.isChecked && !checkBoxGame2.isChecked && !checkBoxGame3.isChecked)
         }.sortedByDescending { it.datePlayed }
@@ -114,6 +114,28 @@ class HistoryActivity : AppCompatActivity() {
         return try {
             val querySnapshow = FirebaseFirestore.getInstance()
                 .collection("stroopTest")
+                .document(FirebaseAuth.getInstance().currentUser?.email.toString())
+                .collection("games")
+                .get()
+                .await()
+
+            val gameList= mutableListOf<GameItem>()
+            for (document in querySnapshow.documents){
+                val gameData= document.toObject(GameData::class.java)
+                if (gameData != null) {
+                    gameList.add(GameItem(gameData.name, gameData.reactionTime, gameData.accuracy, gameData.date))
+                }
+            }
+            gameList
+        }catch (e:Exception){
+            mutableListOf<GameItem>()
+        }
+    }
+
+    suspend fun fetchEriksensFlanker(): MutableList<GameItem> {
+        return try {
+            val querySnapshow = FirebaseFirestore.getInstance()
+                .collection("eriksensFlankerTest")
                 .document(FirebaseAuth.getInstance().currentUser?.email.toString())
                 .collection("games")
                 .get()

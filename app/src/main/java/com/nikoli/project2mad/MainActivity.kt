@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.nikoli.project2mad.games.number_size_congruency_test.NumberSizeCongruency
 import com.nikoli.project2mad.games.stroop.StroopTest
-import com.nikoli.project2mad.games.tmt.TMT
+import com.nikoli.project2mad.games.eriksensFlanker.EriksensFlanker
 
 /**
  * Main activity
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         gameTwoBtn?.setOnClickListener {
-            val intent= Intent(this, TMT::class.java)
+            val intent= Intent(this, EriksensFlanker::class.java)
             startActivity(intent)
         }
 

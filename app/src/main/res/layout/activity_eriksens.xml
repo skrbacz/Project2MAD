@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/firstArrow"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_green">
+
+
+
+    <Button
+        android:id="@+id/buttonLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Left"
+        android:background="@color/main_pink"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/buttonRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/main_pink"
+        android:text="Right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/frameFirst"
+                android:layout_width="102dp"
+                android:layout_height="96dp"
+                android:layout_marginLeft="55dp">
+
+                <ImageView
+                    android:id="@+id/firstCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/circle" />
+
+                <ImageView
+                    android:id="@+id/arrow_first"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ic_arrow_left" />
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameSecond"
+                android:layout_width="102dp"
+                android:layout_height="96dp"
+                android:layout_marginLeft="40dp">
+
+                <ImageView
+                    android:id="@+id/secondCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/circle" />
+
+                <ImageView
+                    android:id="@+id/arrow_second"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ic_arrow_left" />
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameThird"
+                android:layout_width="102dp"
+                android:layout_height="96dp"
+                android:layout_marginLeft="40dp">
+
+                <ImageView
+                    android:id="@+id/thirdCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_ring" />
+
+                <ImageView
+                    android:id="@+id/arrow_third"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ic_arrow_right" />
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameFourth"
+                android:layout_width="102dp"
+                android:layout_height="96dp"
+                android:layout_marginLeft="40dp">
+
+                <ImageView
+                    android:id="@+id/fourthCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/circle" />
+
+                <ImageView
+                    android:id="@+id/arrow_fourth"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ic_arrow_left" />
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameFifth"
+                android:layout_width="102dp"
+                android:layout_height="96dp"
+                android:layout_marginLeft="40dp">
+
+                <ImageView
+                    android:id="@+id/fifthCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/circle" />
+
+                <ImageView
+                    android:id="@+id/arrow_fifth"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ic_arrow_left" />
+
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

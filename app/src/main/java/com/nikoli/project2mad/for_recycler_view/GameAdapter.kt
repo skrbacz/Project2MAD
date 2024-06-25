@@ -46,7 +46,7 @@ class GameAdapter(private var gameList: List<GameItem>) : RecyclerView.Adapter<G
 
         val colorRes = when (game.name) {
             "Stroop Test" -> R.color.main_violet
-            "Trail Making Test" -> R.color.main_green
+            "Eriksen's Flanker Test" -> R.color.main_green
             "Number Size Congruency" -> R.color.main_blue
             else -> android.R.color.white
         }

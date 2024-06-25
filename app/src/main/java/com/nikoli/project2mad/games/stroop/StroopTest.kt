@@ -1,5 +1,4 @@
 package com.nikoli.project2mad.games.stroop
-
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
